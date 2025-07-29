@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Echo of the Past - Blog</title>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --black: #000;
+      --white: #fff;
+      --gold: #ffd700;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--black);
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      background-color: #000;
+      border-bottom: 2px solid var(--gold);
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-family: 'Unbounded', cursive;
+      font-size: 1.8rem;
+      color: var(--gold);
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: var(--white);
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--gold);
+    }
+
+    .page-title {
+      text-align: center;
+      padding: 40px 20px 20px;
+      font-size: 2rem;
+      color: var(--gold);
+    }
+
+    .search-section {
+      text-align: center;
+      margin: 20px;
+    }
+
+    .search-section input {
+      width: 90%;
+      max-width: 500px;
+      padding: 12px;
+      border-radius: 10px;
+      border: none;
+      font-size: 1rem;
+    }
+
+    /* --- LAYOUT FIX START --- */
+    .blog-grid {
+      display: grid; /* Changed from flex to grid */
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* More flexible column sizing */
+      gap: 20px;
+      padding: 40px 20px;
+      /* Removed justify-content: center; as grid handles spacing better */
+    }
+
+    .blog-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid #444;
+      border-radius: 10px;
+      /* Removed fixed width to allow grid to manage sizing */
+      transition: 0.3s;
+      display: flex; /* Keep flex for internal card content distribution */
+      flex-direction: column;
+      overflow: hidden;
+      cursor: pointer; /* Add cursor back to indicate clickability of the card */
+    }
+
+    .blog-card:hover {
+      background: rgba(255, 215, 0, 0.08);
+      transform: translateY(-5px);
+    }
+
+    .blog-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .blog-card-content {
+      padding: 20px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .blog-card h3 {
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+
+    .blog-card p {
+      color: #ccc;
+      font-size: 0.95rem;
+      flex-grow: 1; /* Allows paragraph to take up available space */
+    }
+
+    .read-more-btn {
+      margin-top: 15px;
+      padding: 10px;
+      background-color: var(--gold);
+      color: var(--black);
+      border: none;
+      text-align: center;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none; /* Ensure no underline for the button */
+      display: inline-block; /* Make it behave like a block but respect text-align */
+      align-self: flex-start; /* Aligns the button to the start if card-content is flex */
+    }
+
+    .read-more-btn:hover {
+      background-color: #e6c200;
+    }
+    /* --- LAYOUT FIX END --- */
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      border-top: 1px solid #333;
+      background-color: #000;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">Echo of the Past</div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="africapage.html">Africa</a>
+        <a href="aboutus.html">About Us</a>
+        <a href="bloglistpage.html">Blog</a>
+        <a href="halloffame.html">Hall of Fame</a>
+    </nav>
+  </header>
+
+  <div class="page-title">Explore African Stories, Legends & History</div>
+
+  <section class="search-section">
+    <input type="text" id="searchInput" placeholder="Search blog titles, topics...">
+  </section>
+
+  <section class="blog-grid" id="blogContainer">
+    <div class="blog-card" onclick="location.href='blog-posts/mali-empire.html'">
+      <img src="The-Mali-Empire.jpg" alt="Mali Empire">
+      <div class="blog-card-content">
+        <h3>The Rise of the Mali Empire</h3>
+        <p>Discover how Mansa Musa’s empire became one of the richest and most powerful in history.</p>
+        <a href="maliempire.html" class="read-more-btn">Read More</a>
+      </div>
+    </div>
+
+    <div class="blog-card" onclick="location.href='blog-posts/queen-nzinga.html'">
+      <img src="page_queen_nzinga.png" alt="Queen Nzinga">
+      <div class="blog-card-content">
+        <h3>Queen Nzinga: The Warrior Queen</h3>
+        <p>Explore the life of Queen Nzinga, who defied colonizers with diplomacy and strength.</p>
+        <a href="blog-posts/queen-nzinga.html" class="read-more-btn">Read More</a>
+      </div>
+    </div>
+
+    <div class="blog-card" onclick="location.href='blog-posts/timbuktu.html'">
+      <img src="Sankore-mosque-Timbuktu-Mali.jpg" alt="Timbuktu">
+      <div class="blog-card-content">
+        <h3>Timbuktu: Center of Knowledge</h3>
+        <p>Learn about the ancient manuscripts and schools that made Timbuktu a world heritage site.</p>
+        <a href="blog-posts/timbuktu.html" class="read-more-btn">Read More</a>
+      </div>
+    </div>
+
+    <div class="blog-card" onclick="location.href='blog-posts/benin-bronzes.html'">
+      <img src="merlin_165734295_cd0ed8e7-66c6-4301-ace8-4665ad821374-superJumbo.jpg" alt="Benin Bronzes">
+      <div class="blog-card-content">
+        <h3>The Benin Bronzes</h3>
+        <p>Art and history combine in the masterworks of the ancient Benin Kingdom.</p>
+        <a href="blog-posts/benin-bronzes.html" class="read-more-btn">Read More</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Echo of the Past. Reclaiming African greatness. ✊🏾
+  </footer>
+
+  <script>
+    const searchInput = document.getElementById("searchInput");
+    const blogCards = document.querySelectorAll(".blog-card");
+
+    searchInput.addEventListener("input", () => {
+      const keyword = searchInput.value.toLowerCase();
+      blogCards.forEach(card => {
+        const content = card.innerText.toLowerCase();
+        card.style.display = content.includes(keyword) ? "flex" : "none"; // Changed to 'flex' as card is flex item
+      });
+    });
+  </script>
+</body>
+
+</html>
