@@ -1,0 +1,140 @@
+:root {
+    --black: #000;
+    --white: #fff;
+    --gold: #ffd700;
+    --highlight: #ffdd57;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--black);
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #000;
+    border-bottom: 2px solid var(--gold);
+    flex-wrap: wrap;
+}
+
+.logo {
+    font-family: 'Unbounded', cursive;
+    font-size: 1.8rem;
+    color: var(--gold);
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--gold);
+}
+
+.hero {
+    text-align: center;
+    padding: 60px 20px 20px;
+}
+
+.hero h1 {
+    font-family: 'Unbounded', cursive;
+    font-size: 2.5rem;
+    color: var(--gold);
+    animation: typing 3s steps(30), blink 0.5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+}
+
+.hero p {
+    margin-top: 10px;
+    color: #ccc;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+.map-section {
+    position: relative;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.map-section img {
+    width: 90%;
+    max-width: 600px;
+}
+
+.arrow {
+    position: absolute;
+    width: 100px;
+    top: 30%;
+    left: 55%;
+    transform: rotate(-30deg);
+    animation: arrowMove 1.5s infinite alternate ease-in-out;
+}
+
+@keyframes arrowMove {
+    0% { transform: translateY(0) rotate(-30deg); }
+    100% { transform: translateY(-10px) rotate(-30deg); }
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 40px 20px;
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 20px;
+    color: #eee;
+    transition: 0.3s;
+}
+
+.card:hover {
+    border-color: var(--gold);
+    background-color: rgba(255, 215, 0, 0.05);
+}
+
+.card h3 {
+    color: var(--gold);
+    margin-bottom: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+    border-top: 1px solid #333;
+    background-color: #000;
+}
